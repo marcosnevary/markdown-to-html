@@ -2,5 +2,5 @@
 
 **Parágrafo** do _texto_.
 
-- Primeiro item da lista
-- Segundo item da lista
+- Item 1
+- Item 2
