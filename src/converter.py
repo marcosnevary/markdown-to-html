@@ -40,7 +40,6 @@ def ast_to_html(node: Node) -> str:
         html = "<ul>"
 
         for item in node.items:
-            print(item)
             html += f"<li>{ast_to_html(item)}</li>"
 
         html += "</ul>"

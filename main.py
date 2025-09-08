@@ -5,18 +5,25 @@ from src.converter import ast_to_html
 from src.lexer import Lexer
 from src.parser import Parser
 
-file_name = "test"
-INPUT_PATH = Path("examples") / f"{file_name}.md"
-OUTPUT_PATH = Path("examples") / f"{file_name}.html"
 
-markdown = utils.read_markdown(INPUT_PATH)
+def markdown_to_html(file_name: str) -> None:
+    input_path = Path("examples") / f"{file_name}.md"
+    output_path = Path("examples") / f"{file_name}.html"
 
-lexer = Lexer(markdown)
-tokens = lexer.tokenize()
+    markdown = utils.read_markdown(input_path)
 
-parser = Parser(tokens)
-ast = parser.parse()
+    lexer = Lexer(markdown)
+    tokens = lexer.tokenize()
 
-html = ast_to_html(ast)
+    parser = Parser(tokens)
+    ast = parser.parse()
 
-utils.write_html(html, OUTPUT_PATH)
+    html = ast_to_html(ast)
+
+    utils.write_html(html, output_path)
+
+
+file_names = ["example_1", "example_2", "example_3", "article_example"]
+
+for file_name in file_names:
+    markdown_to_html(file_name)
