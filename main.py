@@ -7,8 +7,8 @@ from src.parser import Parser
 
 
 def markdown_to_html(file_name: str) -> None:
-    input_path = Path("examples") / f"{file_name}.md"
-    output_path = Path("examples") / f"{file_name}.html"
+    input_path = Path("input") / f"{file_name}.md"
+    output_path = Path("output") / f"{file_name}.html"
 
     markdown = utils.read_markdown(input_path)
 
